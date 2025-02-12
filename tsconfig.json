@@ -8,6 +8,9 @@
   "references": [
     {
       "path": "./packages/infra/zod-env"
+    },
+    {
+      "path": "./packages/infra/config"
     }
   ]
 }

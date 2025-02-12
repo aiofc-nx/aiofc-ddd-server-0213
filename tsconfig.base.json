@@ -15,6 +15,7 @@
     "declarationMap": true,
     "sourceMap": true,
     "paths": {
+      "@aiofc/config": ["packages/infra/config/src/index.ts"],
       "@aiofc/zod-env": ["packages/infra/zod-env/src/index.ts"]
     }
   }

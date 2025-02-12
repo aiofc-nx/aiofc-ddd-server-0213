@@ -1,4 +1,6 @@
 import nx from '@nx/eslint-plugin';
+import importPlugin from 'eslint-plugin-import';
+
 export default [
   ...nx.configs['flat/base'],
   ...nx.configs['flat/typescript'],
@@ -24,7 +26,23 @@ export default [
       ],
     },
   },
-
+  {
+    plugins: {
+      import: importPlugin,
+    },
+    rules: {
+      'import/order': [
+        'error',
+        {
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
+          'newlines-between': 'always',
+        },
+      ],
+    },
+  },
   {
     files: [
       '**/*.ts',
