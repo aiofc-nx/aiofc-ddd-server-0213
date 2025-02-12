@@ -1,9 +1,13 @@
 {
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "."
-  },
+  // "compilerOptions": {
+  //   "baseUrl": "."
+  // },
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./packages/infra/zod-env"
+    }
+  ]
 }

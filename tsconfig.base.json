@@ -13,6 +13,9 @@
     "skipLibCheck": true,
     "removeComments": true,
     "declarationMap": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "paths": {
+      "@aiofc/zod-env": ["packages/infra/zod-env/src/index.ts"]
+    }
   }
 }
