@@ -42,3 +42,7 @@ Thumbs.db
 .nx/workspace-data
 
 test-output
+
+# docs
+# docs/api
+docs/.vitepress/cache

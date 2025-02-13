@@ -13,7 +13,7 @@ export const setupI18nModule = () => {
     useFactory: () => ({
       fallbackLanguage: 'zh',
       loaderOptions: {
-        path: path.join(__dirname, 'i18n'),
+        path: path.join(__dirname, 'assets/i18n'),
         watch: true,
         includeSubfolders: true,
       },

@@ -11,6 +11,9 @@ importers:
       '@aiofc/config':
         specifier: workspace:*
         version: link:packages/infra/config
+      '@aiofc/drizzle-schema':
+        specifier: workspace:*
+        version: link:packages/infra/drizzle-schema
       '@aiofc/logger':
         specifier: workspace:*
         version: link:packages/infra/logger
@@ -95,7 +98,7 @@ importers:
         version: 19.7.1
       '@commitlint/config-nx-scopes':
         specifier: ^19.7.1
-        version: 19.7.1(nx@21.0.0-canary.20250206-8bd0bcd)
+        version: 19.7.1(nx@20.4.3)
       '@eslint/js':
         specifier: ^9.8.0
         version: 9.20.0
@@ -106,32 +109,32 @@ importers:
         specifier: ^11.0.8
         version: 11.0.9(@nestjs/common@11.0.9)(@nestjs/core@11.0.9)
       '@nx/eslint':
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(verdaccio@5.33.0)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@20.4.3)(verdaccio@5.33.0)
       '@nx/eslint-plugin':
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(@typescript-eslint/parser@8.24.0)(eslint-config-prettier@9.1.0)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(@typescript-eslint/parser@8.24.0)(eslint-config-prettier@9.1.0)(eslint@9.20.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
       '@nx/jest':
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
       '@nx/js':
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
       '@nx/nest':
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@20.4.3)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
       '@nx/node':
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@20.4.3)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
       '@nx/web':
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
       '@nx/webpack':
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(esbuild@0.19.12)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)(webpack-cli@5.1.4)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(esbuild@0.19.12)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)(webpack-cli@5.1.4)
       '@nx/workspace':
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)
       '@swc-node/register':
         specifier: ~1.9.1
         version: 1.9.2(@swc/core@1.5.29)(@swc/types@0.1.17)(typescript@5.7.3)
@@ -187,8 +190,8 @@ importers:
         specifier: ^29.7.0
         version: 29.7.0
       nx:
-        specifier: 21.0.0-canary.20250206-8bd0bcd
-        version: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)
+        specifier: 20.4.3
+        version: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)
       prettier:
         specifier: ^2.6.2
         version: 2.8.8
@@ -243,6 +246,15 @@ importers:
       zod:
         specifier: ^3.24.1
         version: 3.24.2
+
+  packages/infra/drizzle-schema:
+    dependencies:
+      drizzle-orm:
+        specifier: ^0.38.3
+        version: 0.38.4(@types/pg@8.11.11)(pg@8.13.2)(postgres@3.4.5)
+      tslib:
+        specifier: ^2.3.0
+        version: 2.8.1
 
   packages/infra/logger:
     dependencies:
@@ -1804,7 +1816,7 @@ packages:
       conventional-changelog-conventionalcommits: 7.0.2
     dev: true
 
-  /@commitlint/config-nx-scopes@19.7.1(nx@21.0.0-canary.20250206-8bd0bcd):
+  /@commitlint/config-nx-scopes@19.7.1(nx@20.4.3):
     resolution: {integrity: sha512-3uDltp+Uddrt8VRZASbMaHi1105QXtFVF/SImGeefnrS4+djmm3gvRTlgOLZjNA7AwGQXU8xCPb8uYKqWQc01g==}
     engines: {node: '>=v18'}
     peerDependencies:
@@ -1814,7 +1826,7 @@ packages:
         optional: true
     dependencies:
       '@commitlint/types': 19.5.0
-      nx: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)
+      nx: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)
     dev: true
 
   /@commitlint/config-validator@19.5.0:
@@ -3588,8 +3600,8 @@ packages:
     dependencies:
       consola: 3.4.0
 
-  /@nx/devkit@21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd):
-    resolution: {integrity: sha512-vwTcSaF9C/5sMzctkgC9S0eHWBWecT/0J2T1vOFJATTDnKjGcibFb2ZOHfDe33xN6MKsgrXPdP9821wLOQAzpQ==}
+  /@nx/devkit@20.4.3(nx@20.4.3):
+    resolution: {integrity: sha512-zhZMVJ5hOVZ7VRROc7gZ72F4f0c4wnE8xHasmYbXnOIhqzfm8ozPCgNsgGEGMnfEXDlj144cObt3OyD6Quj/bQ==}
     peerDependencies:
       nx: '>= 19 <= 21'
     dependencies:
@@ -3597,15 +3609,15 @@ packages:
       enquirer: 2.3.6
       ignore: 5.3.2
       minimatch: 9.0.3
-      nx: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)
+      nx: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)
       semver: 7.7.1
       tmp: 0.2.3
       tslib: 2.8.1
       yargs-parser: 21.1.1
     dev: true
 
-  /@nx/eslint-plugin@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(@typescript-eslint/parser@8.24.0)(eslint-config-prettier@9.1.0)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0):
-    resolution: {integrity: sha512-/00YBqe09zg6celP+jWQQA9mNZl4N5fazloofiBmfVwo7+JpP8wwtUhVjwqofTBxp62me8P3SVNeJWP+f5lSfQ==}
+  /@nx/eslint-plugin@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(@typescript-eslint/parser@8.24.0)(eslint-config-prettier@9.1.0)(eslint@9.20.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0):
+    resolution: {integrity: sha512-NH6UYOJ2cO5gxE3UBPnedJGOyhrJ6Gdf1fKOEvK2KUkHfVgqSvD0PYegyQcUJJpcsIuW4TLb0THsdY7gjVMD8A==}
     peerDependencies:
       '@typescript-eslint/parser': ^6.13.2 || ^7.0.0 || ^8.0.0
       eslint-config-prettier: ^9.0.0
@@ -3613,8 +3625,8 @@ packages:
       eslint-config-prettier:
         optional: true
     dependencies:
-      '@nx/devkit': 21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd)
-      '@nx/js': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
+      '@nx/devkit': 20.4.3(nx@20.4.3)
+      '@nx/js': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
       '@typescript-eslint/parser': 8.24.0(eslint@9.20.1)(typescript@5.7.3)
       '@typescript-eslint/type-utils': 8.24.0(eslint@9.20.1)(typescript@5.7.3)
       '@typescript-eslint/utils': 8.24.0(eslint@9.20.1)(typescript@5.7.3)
@@ -3639,8 +3651,8 @@ packages:
       - verdaccio
     dev: true
 
-  /@nx/eslint@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(verdaccio@5.33.0):
-    resolution: {integrity: sha512-TqlAYc7/EQNG+gohEHS4dIyWu+mlp1Gvbcll2Luw4sX4vODrIg/pFw3ccSJXOGreL/SDT5oPzLwer0z/975MmA==}
+  /@nx/eslint@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@20.4.3)(verdaccio@5.33.0):
+    resolution: {integrity: sha512-sznak8MiFif8svzZvJrPgBy3EZcZtC94Qfeei4aUYh7GkovfRLolZIrJWhUQgl2uRh0EdiaVyOucQ6GKDZ3usA==}
     peerDependencies:
       '@zkochan/js-yaml': 0.0.7
       eslint: ^8.0.0 || ^9.0.0
@@ -3648,8 +3660,8 @@ packages:
       '@zkochan/js-yaml':
         optional: true
     dependencies:
-      '@nx/devkit': 21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd)
-      '@nx/js': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
+      '@nx/devkit': 20.4.3(nx@20.4.3)
+      '@nx/js': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
       eslint: 9.20.1
       semver: 7.7.1
       tslib: 2.8.1
@@ -3666,13 +3678,13 @@ packages:
       - verdaccio
     dev: true
 
-  /@nx/jest@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0):
-    resolution: {integrity: sha512-yr1ond+oYmIZtIQNWp6ZkM7FMO8aDgcEfF2gKeTWoLcqIzdocGsTOvEuXR1sTKBHvcV3KPiXd2Q7BECrSyvqZQ==}
+  /@nx/jest@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0):
+    resolution: {integrity: sha512-TlBjgelQ7biCzzCM7Di1zXu2TSWXWUrp+Ra19nVMW3ZzWZY3PHOF6b7WVC7KMRNwkPsacdAfH4uRHuZD0tLCOg==}
     dependencies:
       '@jest/reporters': 29.7.0
       '@jest/test-result': 29.7.0
-      '@nx/devkit': 21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd)
-      '@nx/js': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
+      '@nx/devkit': 20.4.3(nx@20.4.3)
+      '@nx/js': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.7.3)
       identity-obj-proxy: 3.0.0
       jest-config: 29.7.0(@types/node@22.13.1)(ts-node@10.9.1)
@@ -3700,8 +3712,8 @@ packages:
       - verdaccio
     dev: true
 
-  /@nx/js@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0):
-    resolution: {integrity: sha512-mbk2lcD33/zZKTLY4rnoLuBe+JV5JCXZsWymmQICLpY8si/KpsUhAHbGXCiuXdD46HhAcEXYjbbXWjzSssxBhw==}
+  /@nx/js@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0):
+    resolution: {integrity: sha512-+XUQoFryd+hdqPc3d2EDZAOWVNpICUabhc7T979hmHY+ICWZASb7tzfZhl18IFxv0n0+c1KZhBiM6ZCISLzg2A==}
     peerDependencies:
       verdaccio: ^5.0.4
     peerDependenciesMeta:
@@ -3715,8 +3727,8 @@ packages:
       '@babel/preset-env': 7.26.8(@babel/core@7.26.8)
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.8)
       '@babel/runtime': 7.26.7
-      '@nx/devkit': 21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd)
-      '@nx/workspace': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)
+      '@nx/devkit': 20.4.3(nx@20.4.3)
+      '@nx/workspace': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)
       '@zkochan/js-yaml': 0.0.7
       babel-plugin-const-enum: 1.2.0(@babel/core@7.26.8)
       babel-plugin-macros: 3.1.0
@@ -3751,14 +3763,14 @@ packages:
       - typescript
     dev: true
 
-  /@nx/nest@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0):
-    resolution: {integrity: sha512-DinahHOhIV8ocVyxrCsrVG9awci5iPXaDEDPM+jhrvLMJYL24lUGXELNbIJtE7fQltuCryTKaOmrYR0C6n91ew==}
+  /@nx/nest@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@20.4.3)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0):
+    resolution: {integrity: sha512-3ViG91imdUrcYxuYUTVIJBdfYPOUPYB/a9Jb3JuaZiFwjDQoYR6HSHFI48douMHvS6ACBZtrW24pPKQWpaIOEg==}
     dependencies:
       '@nestjs/schematics': 9.2.0(typescript@5.7.3)
-      '@nx/devkit': 21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd)
-      '@nx/eslint': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(verdaccio@5.33.0)
-      '@nx/js': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
-      '@nx/node': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
+      '@nx/devkit': 20.4.3(nx@20.4.3)
+      '@nx/eslint': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@20.4.3)(verdaccio@5.33.0)
+      '@nx/js': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
+      '@nx/node': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@20.4.3)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@babel/traverse'
@@ -3779,13 +3791,13 @@ packages:
       - verdaccio
     dev: true
 
-  /@nx/node@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0):
-    resolution: {integrity: sha512-OyfoDaMPsL1n046DlDhFcV7Dx53LQAObmG8Ah+JQS3z3ELdyGBZ54u6FTdk8AY7fDEXw1QwmkjhePX3zNdXMgA==}
+  /@nx/node@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@20.4.3)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0):
+    resolution: {integrity: sha512-e6My5ISY3LNiZ4eHkzIUNi7PwrzWzGsD4yhB/m7qmqpf9b6Guuz6kbY/VidZR34z1pQ3gQ00LYQnrruAO+5g9g==}
     dependencies:
-      '@nx/devkit': 21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd)
-      '@nx/eslint': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@21.0.0-canary.20250206-8bd0bcd)(verdaccio@5.33.0)
-      '@nx/jest': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
-      '@nx/js': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
+      '@nx/devkit': 20.4.3(nx@20.4.3)
+      '@nx/eslint': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(eslint@9.20.1)(nx@20.4.3)(verdaccio@5.33.0)
+      '@nx/jest': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(ts-node@10.9.1)(typescript@5.7.3)(verdaccio@5.33.0)
+      '@nx/js': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@babel/traverse'
@@ -3805,8 +3817,8 @@ packages:
       - verdaccio
     dev: true
 
-  /@nx/nx-darwin-arm64@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-/e7R/2huhVqm9y6cKtxjNGoCOucuOaeiYUkXC5wIY3Z9tH0BS7sHgwVBWKoHwuvDEZblq6Lod1QvXS89tacAgA==}
+  /@nx/nx-darwin-arm64@20.4.3:
+    resolution: {integrity: sha512-DZmqsczBxHGux//y6bwFC1mSq2AS0iyf6v1nFwxA+S2WW+fhxOKpLWo35jB4399YIxpf1NQWKtfz7p+kh4Dx/Q==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [darwin]
@@ -3814,8 +3826,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx/nx-darwin-x64@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-P14ORTEni4+Xzj1wJXh5j+tFyZKW1V9qCeM4s13tDP5SZNqd0xbgRwsyslp/SS/fwdxi04h2sddAQCa3JM6+1w==}
+  /@nx/nx-darwin-x64@20.4.3:
+    resolution: {integrity: sha512-5CBNZNjRfu8WMFLpvc3n+jbx8U5bmIw04USyRwsspFgxsOjh0z+5UCkGnMMDE1KdxMG5Fk1RURJ5y0KA3zQpMQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [darwin]
@@ -3823,8 +3835,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx/nx-freebsd-x64@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-PmmFfoZDcr5ItxaTOiexaw2wGpqM0teuyn6Lcq8gdDv560uwkt+nZlUgiWiVog+/nmIjtAP8JP2tnivvr4nY1A==}
+  /@nx/nx-freebsd-x64@20.4.3:
+    resolution: {integrity: sha512-aWi5G8yA/gDySmPUoERP2Ehi+69HtsRhRguWbW2Cf0c0LdEWtj62JNoTJ8Se2EJQ+95GtVny1MaxW1mOlJ5ITg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [freebsd]
@@ -3832,8 +3844,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx/nx-linux-arm-gnueabihf@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-Ual8lQ3/fRPg3n6gJnF5oxY1/nCv8Uu5MhSVp+RV9JczlELvgivc6xzAc+VrEvVeO+4C1OlBudBjE4JETte0GA==}
+  /@nx/nx-linux-arm-gnueabihf@20.4.3:
+    resolution: {integrity: sha512-E3LQyHWX/IEJmwfxjbU2o1OiMpYcZ1KJa0qL+dfzNA4WL9QhXNfN3AxGwjv910ctmBj97yzFpT4JqrNr5zf5xg==}
     engines: {node: '>= 10'}
     cpu: [arm]
     os: [linux]
@@ -3841,8 +3853,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx/nx-linux-arm64-gnu@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-wtB+nbBOZTrLwSrKOD3Yq9mOmOweYXT0MTYWuOfvcnHoVW94xp8iO7dELuWHx6Fak1610KmJZ6k8Xq0S3q2cEw==}
+  /@nx/nx-linux-arm64-gnu@20.4.3:
+    resolution: {integrity: sha512-PzGwgBvAhNUpdA2dThYdWuGdM6vrMWChTBimAVbkpOtlkzNglbnmCPQ81fAXQ1Yfn4Fbrrjnn7zbN3FmMQtadA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -3850,8 +3862,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx/nx-linux-arm64-musl@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-lp8CKlLzC0uhSHZBraEds51jGWwBxouw7V9ps1fSIaO9gSO5YYV2WPYMkgFa8ozSEk4lZQGpBuVml1/vVB2QQQ==}
+  /@nx/nx-linux-arm64-musl@20.4.3:
+    resolution: {integrity: sha512-S0YNGr+YDDDueVqqVNH4iXYlsBgP7wSGf5dwO+Jf5/Mubjp7AjfpHXkNDQodRBoAs88QMgWAxpzMJjlStjP+lA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
@@ -3859,8 +3871,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx/nx-linux-x64-gnu@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-2MxEZrvuSZkmKgwOLsUjXa723fEnTldchaQZWQgHn1/NufAJg8BDUOd2XrxmorUaWPAPOYQ+STJXivjNFX673A==}
+  /@nx/nx-linux-x64-gnu@20.4.3:
+    resolution: {integrity: sha512-aWjmda5etks80e5jheu0qeHtpdWiLxB6h9tqmV+kPxUTavZEoAIwjHxGBkG57JrB47H8NtrU0VCH66Rcxay+BQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -3868,8 +3880,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx/nx-linux-x64-musl@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-vz7dQI9z/OJmuTDbc3BMVDLvWTGPE5a2zHFiMhQfNNEd3wyXrn3/ZuYfeWnp1aTNMOPJaHiQV+YFVrw6F0f/4A==}
+  /@nx/nx-linux-x64-musl@20.4.3:
+    resolution: {integrity: sha512-kGi8D3HcgUSIBcnew1sEz/77La1GtMKnVvLCMHJJE/cLKwb7vjUHoZSXdFrWBWA9KFQD/4iJcc0G+eiR1aNOtQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -3877,8 +3889,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx/nx-win32-arm64-msvc@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-IL4AKZmvTCC7UUjuSDina8cE7I6Akwzalc7MUvYh01wtXIrnNqXNB+UMFZUua3puVS/V5zHR5LisV//P/HW9CQ==}
+  /@nx/nx-win32-arm64-msvc@20.4.3:
+    resolution: {integrity: sha512-OEb8VpmxGbrBk4r80DJowF/EwxG3qHd0v6F1qtunFZGwOtVnoQACfabPv26Se4+uvCv54/Zk2ia+aaXWvtYSpg==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [win32]
@@ -3886,8 +3898,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx/nx-win32-x64-msvc@21.0.0-canary.20250206-8bd0bcd:
-    resolution: {integrity: sha512-0Jq6bk+DwG027tyb5o2TUilE2xi6G6QXY6sVsmXgXKzQTJ3bDsL2iZAcoG8ey5hHVv0t8wfEiszU06w16tYyhQ==}
+  /@nx/nx-win32-x64-msvc@20.4.3:
+    resolution: {integrity: sha512-a9NenZp1IgLjH/Z17eb93LWdwww6A1gFwBAABc+bYgyRJybanqpAAwepcfRJKdBA7nzeBbG3JPR8zg9gerPAyg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -3895,11 +3907,11 @@ packages:
     dev: true
     optional: true
 
-  /@nx/web@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0):
-    resolution: {integrity: sha512-9puI6hIFVbQX54rrBwkDpt4iN4XKfZ6F2AzzbVMAbaS6CFeZmoMXQcDwuu+kxWO+AMXStr3e9VRbW89yamyaPQ==}
+  /@nx/web@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0):
+    resolution: {integrity: sha512-0dQqdy9mWxIuywxikrraZF19jYH9bidbrj7LXPB+npt9PbpV6i9rzztIg/bCiL+pmi83LTt50Br4yiDwTwrrlQ==}
     dependencies:
-      '@nx/devkit': 21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd)
-      '@nx/js': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
+      '@nx/devkit': 20.4.3(nx@20.4.3)
+      '@nx/js': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
       detect-port: 1.6.1
       http-server: 14.1.1
       picocolors: 1.1.1
@@ -3917,12 +3929,12 @@ packages:
       - verdaccio
     dev: true
 
-  /@nx/webpack@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(esbuild@0.19.12)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)(webpack-cli@5.1.4):
-    resolution: {integrity: sha512-i42PbE+fpLOAhzsW+4RcHBHpWJYpDif/3m+GQS6esyTVzhWf7xpMW+J0dX3V04rQrgebKi88pxNUWuBsBZkbSA==}
+  /@nx/webpack@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(esbuild@0.19.12)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)(webpack-cli@5.1.4):
+    resolution: {integrity: sha512-mdNN8bbcKbKuZ7UZiLJT1pRUxldOsfuDiEO+LjffRdk2sm8YC7bThPXLaz+xEdVU/w9wHhZkdljQOL06mvgYTQ==}
     dependencies:
       '@babel/core': 7.26.8
-      '@nx/devkit': 21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd)
-      '@nx/js': 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@21.0.0-canary.20250206-8bd0bcd)(typescript@5.7.3)(verdaccio@5.33.0)
+      '@nx/devkit': 20.4.3(nx@20.4.3)
+      '@nx/js': 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)(@types/node@22.13.1)(nx@20.4.3)(typescript@5.7.3)(verdaccio@5.33.0)
       '@phenomnomnominal/tsquery': 5.0.1(typescript@5.7.3)
       ajv: 8.17.1
       autoprefixer: 10.4.20(postcss@8.5.2)
@@ -3986,13 +3998,13 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nx/workspace@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29):
-    resolution: {integrity: sha512-p7rLMQlulxcBZO1wRAH2YzzqoDNXU2VTITPCksLYRPc7nN8+UhTfQAE9+SLasfPzfyK1rw3cHlR2tk1u5jaNiw==}
+  /@nx/workspace@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29):
+    resolution: {integrity: sha512-nvAbsG3zj76+HE4caiT6+HrtRVMVNzhjRzW+Neu5vIDC75FMUK5sExak/Io8iOSPI5LiHaoNHA1nmdGVGgGLWA==}
     dependencies:
-      '@nx/devkit': 21.0.0-canary.20250206-8bd0bcd(nx@21.0.0-canary.20250206-8bd0bcd)
+      '@nx/devkit': 20.4.3(nx@20.4.3)
       chalk: 4.1.2
       enquirer: 2.3.6
-      nx: 21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29)
+      nx: 20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29)
       tslib: 2.8.1
       yargs-parser: 21.1.1
     transitivePeerDependencies:
@@ -11264,8 +11276,8 @@ packages:
       boolbase: 1.0.0
     dev: true
 
-  /nx@21.0.0-canary.20250206-8bd0bcd(@swc-node/register@1.9.2)(@swc/core@1.5.29):
-    resolution: {integrity: sha512-QWWIvET2rYTOOXiDm/SKBw3O2xNud1CAAwGRgLJenTqliakvnJhB4x3K/CVk4wt4tfJoy7Z2GH4tk7eRDf2Hpw==}
+  /nx@20.4.3(@swc-node/register@1.9.2)(@swc/core@1.5.29):
+    resolution: {integrity: sha512-Fynfb7doPYMlFRwtNtKhtcam6/EyFK6E6ElgQCSKpUf7xQAE24Ffc3uy8Bje9wMccV+y1OqnXE7dd32CG+SR8A==}
     hasBin: true
     requiresBuild: true
     peerDependencies:
@@ -11314,16 +11326,16 @@ packages:
       yargs: 17.7.2
       yargs-parser: 21.1.1
     optionalDependencies:
-      '@nx/nx-darwin-arm64': 21.0.0-canary.20250206-8bd0bcd
-      '@nx/nx-darwin-x64': 21.0.0-canary.20250206-8bd0bcd
-      '@nx/nx-freebsd-x64': 21.0.0-canary.20250206-8bd0bcd
-      '@nx/nx-linux-arm-gnueabihf': 21.0.0-canary.20250206-8bd0bcd
-      '@nx/nx-linux-arm64-gnu': 21.0.0-canary.20250206-8bd0bcd
-      '@nx/nx-linux-arm64-musl': 21.0.0-canary.20250206-8bd0bcd
-      '@nx/nx-linux-x64-gnu': 21.0.0-canary.20250206-8bd0bcd
-      '@nx/nx-linux-x64-musl': 21.0.0-canary.20250206-8bd0bcd
-      '@nx/nx-win32-arm64-msvc': 21.0.0-canary.20250206-8bd0bcd
-      '@nx/nx-win32-x64-msvc': 21.0.0-canary.20250206-8bd0bcd
+      '@nx/nx-darwin-arm64': 20.4.3
+      '@nx/nx-darwin-x64': 20.4.3
+      '@nx/nx-freebsd-x64': 20.4.3
+      '@nx/nx-linux-arm-gnueabihf': 20.4.3
+      '@nx/nx-linux-arm64-gnu': 20.4.3
+      '@nx/nx-linux-arm64-musl': 20.4.3
+      '@nx/nx-linux-x64-gnu': 20.4.3
+      '@nx/nx-linux-x64-musl': 20.4.3
+      '@nx/nx-win32-arm64-msvc': 20.4.3
+      '@nx/nx-win32-x64-msvc': 20.4.3
     transitivePeerDependencies:
       - debug
     dev: true

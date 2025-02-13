@@ -17,6 +17,9 @@
     },
     {
       "path": "./apps/platform"
+    },
+    {
+      "path": "./packages/infra/drizzle-schema"
     }
   ]
 }
