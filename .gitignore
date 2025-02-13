@@ -44,5 +44,5 @@ Thumbs.db
 test-output
 
 # docs
-# docs/api
+docs/api
 docs/.vitepress/cache
