@@ -1,9 +1,9 @@
 {
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
-  // "compilerOptions": {
-  //   "baseUrl": "."
-  // },
+  "compilerOptions": {
+    "baseUrl": "."
+  },
   "files": [],
   "references": [
     {
@@ -11,6 +11,15 @@
     },
     {
       "path": "./packages/infra/config"
+    },
+    {
+      "path": "./packages/infra/logger"
+    },
+    {
+      "path": "./apps/platform"
+    },
+    {
+      "path": "./packages/infra/drizzle-schema"
     }
   ]
 }

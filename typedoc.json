@@ -4,7 +4,7 @@
   "tsconfig": "./tsconfig.base.json",
   "entryPoints": [
     "./apps/*/src/**/!(*.spec|*.test).ts",
-    "./packages/*/src/**/!(*.spec|*.test).ts"
+    "./packages/**/*/src/**/!(*.spec|*.test).ts"
   ],
   "out": "./docs/api",
   "docsRoot": "./docs",
