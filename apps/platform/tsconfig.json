@@ -4,6 +4,12 @@
   "include": [],
   "references": [
     {
+      "path": "../../packages/infra/logger"
+    },
+    {
+      "path": "../../packages/infra/config"
+    },
+    {
       "path": "./tsconfig.app.json"
     },
     {
@@ -12,6 +18,9 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   }
 }
