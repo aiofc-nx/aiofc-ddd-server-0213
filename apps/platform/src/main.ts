@@ -9,7 +9,7 @@ import { AppModule } from '~/app.module';
 import {
   applyExpressCompatibility,
   buildFastifyAdapter,
-} from '~/infrastructure/http/fastify-setup';
+} from '~/infrastructure/adapter/fastify-setup';
 
 async function bootstrap() {
   // 创建应用

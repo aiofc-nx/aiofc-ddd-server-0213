@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+
 import typedocSidebar from '../api/typedoc-sidebar.json';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -11,19 +12,15 @@ export default defineConfig({
       { text: 'Technologies', link: '/technologies/pnpm' },
       { text: 'Reference', link: '/reference' },
       { text: 'API', link: '/api' },
-      { text: 'DDD', link: '/ddd/ddd-1' },
+      { text: 'DDD', link: '/ddd/research' },
     ],
 
     sidebar: [
       {
-        text: '需求文档',
-        items: [{ text: '需求分析', link: '/dev/demand-analysis' }],
-      },
-      {
-        text: '提交与日志',
+        text: '领域驱动设计',
         items: [
-          { text: 'Log：01', link: '/commits/log-01' },
-          { text: 'Log：02', link: '/commits/log-02' },
+          { text: '研究', link: '/ddd/research' },
+          { text: '需求分析', link: '/ddd/demand-analysis' },
         ],
       },
 
