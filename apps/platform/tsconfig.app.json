@@ -1,9 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": "./src",
-    "outDir": "../../dist/out-tsc/platform",
+    "outDir": "./dist/out-tsc",
     "module": "commonjs",
     "types": ["node"],
     "experimentalDecorators": true,

@@ -29,6 +29,9 @@ importers:
       '@nestjs/common':
         specifier: ^11.0.8
         version: 11.0.9(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/config':
+        specifier: ^4.0.0
+        version: 4.0.0(@nestjs/common@11.0.9)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: ^11.0.8
         version: 11.0.9(@nestjs/common@11.0.9)(reflect-metadata@0.1.14)(rxjs@7.8.1)
@@ -237,15 +240,15 @@ importers:
 
   packages/infra/config:
     dependencies:
-      '@aiofc/zod-env':
-        specifier: workspace:*
-        version: link:../zod-env
       '@nestjs/common':
         specifier: ^11.0.8
         version: 11.0.9(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
-      tslib:
-        specifier: ^2.3.0
-        version: 2.8.1
+      '@nestjs/config':
+        specifier: ^4.0.0
+        version: 4.0.0(@nestjs/common@11.0.9)(rxjs@7.8.1)
+      js-yaml:
+        specifier: ^4.1.0
+        version: 4.1.0
       zod:
         specifier: ^3.24.1
         version: 3.24.2
@@ -255,9 +258,6 @@ importers:
       drizzle-orm:
         specifier: ^0.38.3
         version: 0.38.4(@types/pg@8.11.11)(pg@8.13.2)(postgres@3.4.5)
-      tslib:
-        specifier: ^2.3.0
-        version: 2.8.1
 
   packages/infra/logger:
     dependencies:
@@ -267,6 +267,9 @@ importers:
       '@nestjs/common':
         specifier: ^11.0.8
         version: 11.0.9(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/config':
+        specifier: ^4.0.0
+        version: 4.0.0(@nestjs/common@11.0.9)(rxjs@7.8.1)
       nestjs-cls:
         specifier: ^5.2.0
         version: 5.2.0(@nestjs/common@11.0.9)(@nestjs/core@11.0.9)(reflect-metadata@0.1.14)(rxjs@7.8.1)
@@ -282,18 +285,12 @@ importers:
       rxjs:
         specifier: ^7.8.0
         version: 7.8.1
-      tslib:
-        specifier: ^2.3.0
-        version: 2.8.1
 
   packages/infra/zod-env:
     dependencies:
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
-      tslib:
-        specifier: ^2.3.0
-        version: 2.8.1
       zod:
         specifier: ^3.24.1
         version: 3.24.2
@@ -3478,6 +3475,19 @@ packages:
       rxjs: 7.8.1
       tslib: 2.8.1
       uid: 2.0.2
+
+  /@nestjs/config@4.0.0(@nestjs/common@11.0.9)(rxjs@7.8.1):
+    resolution: {integrity: sha512-hyhUMtVwlT+tavtPNyekl8iP0QTU1U6awKrgdOSxhMhp3TQMltx7hz2yqGTcARp+19zWPfgJudyxthuD3lPp/Q==}
+    peerDependencies:
+      '@nestjs/common': ^10.0.0 || ^11.0.0
+      rxjs: ^7.1.0
+    dependencies:
+      '@nestjs/common': 11.0.9(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      dotenv: 16.4.7
+      dotenv-expand: 12.0.1
+      lodash: 4.17.21
+      rxjs: 7.8.1
+    dev: false
 
   /@nestjs/core@11.0.9(@nestjs/common@11.0.9)(reflect-metadata@0.1.14)(rxjs@7.8.1):
     resolution: {integrity: sha512-w32ZF1acSnidiRERGRC/Ki7eSrnTdP7twRnjy15Qnmij3oYRCdgX5aZvbUNv17A7bn9S22p+wMNcpHxqwUiOsQ==}
@@ -10743,7 +10753,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}

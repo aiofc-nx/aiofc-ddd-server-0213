@@ -1,6 +1,6 @@
-import { join } from 'path';
+import path from 'path';
 
-import { ConfigModule } from '@aiofc/config';
+import { setupConfigModule } from '@aiofc/config';
 import { setupLoggerModule } from '@aiofc/logger';
 import { Module } from '@nestjs/common';
 
@@ -11,9 +11,11 @@ import { setupI18nModule } from '~/infrastructure/i18n/i18n-setup';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(join(__dirname, '')),
-    setupClsModule(),
+    setupConfigModule(
+      path.join(__dirname, 'assets', 'config.development.yaml')
+    ),
     setupLoggerModule(),
+    setupClsModule(),
     setupI18nModule(),
   ],
   controllers: [AppController],

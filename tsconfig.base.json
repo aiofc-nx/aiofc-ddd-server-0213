@@ -14,6 +14,7 @@
     "removeComments": true,
     "declarationMap": true,
     "sourceMap": true,
+    "baseUrl": ".",
     "paths": {
       "@aiofc/config": ["packages/infra/config/src/index.ts"],
       "@aiofc/drizzle-schema": ["packages/infra/drizzle-schema/src/index.ts"],
