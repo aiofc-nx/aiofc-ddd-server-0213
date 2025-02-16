@@ -1,5 +1,7 @@
-import { IAppConfig } from '@aiofc/config';
+import { ConfigKeyPaths, IAppConfig, ICorsConfig } from '@aiofc/config';
 import { Logger } from '@aiofc/logger';
+import fastifyCompress from '@fastify/compress';
+import fastifyCsrf from '@fastify/csrf-protection';
 import fastifyHelmet from '@fastify/helmet';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
@@ -10,7 +12,7 @@ import { AppModule } from '~/app.module';
 import {
   applyExpressCompatibility,
   buildFastifyAdapter,
-} from '~/infrastructure/adapter/fastify-setup';
+} from '~/infrastructure/http-server/fastify-setup';
 
 async function bootstrap() {
   // 创建应用
@@ -21,37 +23,49 @@ async function bootstrap() {
       // 设置为 true 时，日志消息将被暂时存储（缓冲）而不是立即输出。
       bufferLogs: true,
       // 将关闭NestJS内置的日志记录
-      // logger: false,
+      logger: false,
     }
   );
   // 使用PinoLogger
   const pino = app.get(Logger);
   app.useLogger(pino);
   // 刷新日志
-  // app.flushLogs();
+  app.flushLogs();
   // 获取配置
-  const configService = app.get(ConfigService);
+  const configService = app.get(ConfigService<ConfigKeyPaths>);
 
-  const config = configService.get<IAppConfig>('app');
-
+  const appConfig = configService.get<IAppConfig>('app');
+  const corsConfig = configService.get<ICorsConfig>('cors');
   // 直接访问和操作 Fastify 实例，利用 Fastify 提供的各种功能和插件来扩展和定制你的 NestJS 应用程序。
-  // const fastifyInstance: FastifyInstance = app.getHttpAdapter().getInstance();
+  const fastifyInstance: FastifyInstance = app.getHttpAdapter().getInstance();
   // 提高 Fastify 与 Express 的兼容性
-  // applyExpressCompatibility(fastifyInstance);
+  applyExpressCompatibility(fastifyInstance);
   // 注册Helmet
-  // app.register(fastifyHelmet, {});
-  // 注册 Helmet 安全中间件
-
+  app.register(fastifyHelmet, {});
+  // 注册压缩
+  await app.register(fastifyCompress);
+  // TODO: 注册CSRF
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  await app.register(fastifyCsrf as any);
   // 注册ShutdownHooks
-  // app.enableShutdownHooks();
+  app.enableShutdownHooks();
   // 启用跨域资源共享
-  // app.enableCors();
+  if (corsConfig?.enabled) {
+    app.enableCors({
+      origin: corsConfig?.origin,
+      methods: corsConfig?.methods,
+      preflightContinue: corsConfig?.preflight_continue,
+      optionsSuccessStatus: corsConfig?.options_success_status,
+      credentials: corsConfig?.credentials,
+      maxAge: corsConfig?.max_age,
+    });
+  }
   // 启动应用
-  if (config?.globalPrefix) {
-    app.setGlobalPrefix(config?.globalPrefix);
+  if (appConfig?.globalPrefix) {
+    app.setGlobalPrefix(appConfig?.globalPrefix);
   }
 
-  await app.listen(config?.port || 3008, '0.0.0.0');
+  await app.listen(appConfig?.port || 3008, '0.0.0.0');
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();

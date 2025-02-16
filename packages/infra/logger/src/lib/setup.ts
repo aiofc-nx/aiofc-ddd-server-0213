@@ -1,6 +1,6 @@
 import { IncomingMessage, ServerResponse } from 'node:http';
 
-import { ILoggerConfig } from '@aiofc/config';
+import { ConfigKeyPaths, ILoggerConfig } from '@aiofc/config';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ClsService, ClsStore } from 'nestjs-cls';
 
@@ -33,9 +33,11 @@ export function setupLoggerModule<ClsType extends ClsStore>(
   ) => Record<string, string> = () => ({})
 ) {
   return LoggerModule.forRootAsync({
-    // imports: [ConfigModule],
+    // imports: [ConfigModule], // ConfigModule 被配置为全局模块，所以不需要在这里导入，避免重复初始化
+    inject: [ConfigService, { token: ClsService, optional: true }],
+    providers: [],
     useFactory: async (
-      configService: ConfigService,
+      configService: ConfigService<ConfigKeyPaths>,
       clsService?: ClsService<ClsType>
     ) => {
       const config = configService.get<ILoggerConfig>('logger');
@@ -127,7 +129,5 @@ export function setupLoggerModule<ClsType extends ClsStore>(
         },
       };
     },
-    inject: [ConfigService, { token: ClsService, optional: true }],
-    providers: [],
   });
 }

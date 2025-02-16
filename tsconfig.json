@@ -20,6 +20,9 @@
     },
     {
       "path": "./apps/fastify-mvc"
+    },
+    {
+      "path": "./packages/infra/typings"
     }
   ]
 }

@@ -5,10 +5,13 @@ import { ConfigModule, registerAs } from '@nestjs/config';
 import * as yaml from 'js-yaml';
 
 import {
-  configSchema,
+  allConfigSchema,
   IAppConfig,
+  ICorsConfig,
   IDatabaseConfig,
   ILoggerConfig,
+  IRedisConfig,
+  IThrottlerConfig,
 } from './config.schema';
 
 const validateConfig = (yamlFilePath: string) => {
@@ -21,7 +24,7 @@ const validateConfig = (yamlFilePath: string) => {
     `已读取文件：${yamlFilePath} \n ${JSON.stringify(config, null, 2)}`
   );
   // 校验配置项
-  const parsedConfig = configSchema.safeParse(config); // 使用 Zod 进行校验
+  const parsedConfig = allConfigSchema.safeParse(config); // 使用 Zod 进行校验
   if (!parsedConfig.success) {
     throw new Error(`配置验证失败: ${JSON.stringify(parsedConfig.error)}`);
   } else {
@@ -35,25 +38,43 @@ export const setupConfigModule: (
 ) => Promise<DynamicModule> = async (yamlFilePath) => {
   const parsedConfig = validateConfig(yamlFilePath) as {
     success: true;
-    data: { app: IAppConfig; logger: ILoggerConfig; database: IDatabaseConfig };
+    data: {
+      app: IAppConfig;
+      logger: ILoggerConfig;
+      database: IDatabaseConfig;
+      cors: ICorsConfig;
+      throttler: IThrottlerConfig;
+      redis: IRedisConfig;
+    };
   };
-
+  // 注册应用配置
   const AppConfig = registerAs('app', () => parsedConfig.data.app);
-
+  // 注册日志配置
   const LoggerConfig = registerAs('logger', () => parsedConfig.data.logger);
-
+  // 注册CORS配置
+  const CorsConfig = registerAs('cors', () => parsedConfig.data.cors);
+  // 注册限流配置
+  const ThrottlerConfig = registerAs(
+    'throttler',
+    () => parsedConfig.data.throttler
+  );
+  // 注册数据库配置
   const DatabaseConfig = registerAs(
     'database',
     () => parsedConfig.data.database
   );
+  // 注册Redis配置
+  const RedisConfig = registerAs('redis', () => parsedConfig.data.redis);
+
   return ConfigModule.forRoot({
-    isGlobal: true,
-    load: [AppConfig, LoggerConfig, DatabaseConfig], // 传入 YAML 文件路径
+    isGlobal: true, // 必须全局导入，因为Logger 和 Database 等模块需要使用 ConfigService
+    load: [
+      AppConfig,
+      LoggerConfig,
+      DatabaseConfig,
+      CorsConfig,
+      ThrottlerConfig,
+      RedisConfig,
+    ], // 传入 YAML 文件路径
   });
 };
-
-// export interface AllConfigType {
-//   [appConfigToken]: IAppConfig;
-//   [loggerConfigToken]: ILoggerConfig;
-//   [databaseConfigToken]: IDatabaseConfig;
-// }
