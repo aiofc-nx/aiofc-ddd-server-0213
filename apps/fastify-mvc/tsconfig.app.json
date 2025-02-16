@@ -1,15 +1,18 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
-    "declaration": true
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
   "references": [
     {
-      "path": "../typings/tsconfig.lib.json"
+      "path": "../../packages/infra/logger/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/infra/config/tsconfig.lib.json"
     }
   ]
 }

@@ -2,7 +2,6 @@ import { ConfigKeyPaths, IAppConfig, ICorsConfig } from '@aiofc/config';
 import { Logger } from '@aiofc/logger';
 import fastifyCompress from '@fastify/compress';
 import fastifyCsrf from '@fastify/csrf-protection';
-import fastifyHelmet from '@fastify/helmet';
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { NestFastifyApplication } from '@nestjs/platform-fastify';
@@ -13,6 +12,8 @@ import {
   applyExpressCompatibility,
   buildFastifyAdapter,
 } from '~/infrastructure/http-server/fastify-setup';
+import { fastifyApp } from '~/infrastructure/http-server/fastify.adapter';
+import { registerHelmet } from '~/infrastructure/http-server/security.adapter';
 
 async function bootstrap() {
   // 创建应用
@@ -40,8 +41,24 @@ async function bootstrap() {
   const fastifyInstance: FastifyInstance = app.getHttpAdapter().getInstance();
   // 提高 Fastify 与 Express 的兼容性
   applyExpressCompatibility(fastifyInstance);
-  // 注册Helmet
-  app.register(fastifyHelmet, {});
+  // 注册 Helmet 安全中间件
+  // @description 提供基本的安全防护，包括 XSS、CSP、HSTS 等
+  // @link https://github.com/helmetjs/helmet
+  // @link https://github.com/fastify/fastify-helmet
+  // 本地环境不开启,具体配置请参考官方文档
+  await registerHelmet(fastifyApp.getInstance(), {
+    contentSecurityPolicy: appConfig?.NODE_ENV
+      ? false
+      : {
+          directives: {
+            defaultSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'", 'https:'],
+            scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https:'],
+            imgSrc: ["'self'", 'data:', 'https:'],
+            connectSrc: ["'self'", 'https:', 'wss:'],
+          },
+        },
+  });
   // 注册压缩
   await app.register(fastifyCompress);
   // TODO: 注册CSRF
