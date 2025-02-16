@@ -1,9 +1,6 @@
 {
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "."
-  },
   "files": [],
   "references": [
     {
@@ -20,6 +17,12 @@
     },
     {
       "path": "./packages/infra/drizzle-schema"
+    },
+    {
+      "path": "./apps/fastify-mvc"
+    },
+    {
+      "path": "./packages/infra/typings"
     }
   ]
 }

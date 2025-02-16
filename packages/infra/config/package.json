@@ -5,9 +5,10 @@
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "dependencies": {
-    "tslib": "^2.3.0",
     "@nestjs/common": "^11.0.8",
-    "@aiofc/zod-env": "workspace:*",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "@nestjs/config": "^4.0.0",
+    "js-yaml": "^4.1.0",
+    "@aiofc/typings": "workspace:*"
   }
 }

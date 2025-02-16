@@ -1,9 +1,11 @@
 import { IncomingMessage, ServerResponse } from 'node:http';
 
-import { ConfigService } from '@aiofc/config';
+import { ConfigKeyPaths, ILoggerConfig } from '@aiofc/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ClsService, ClsStore } from 'nestjs-cls';
 
 import { LoggerModule } from './logger.module';
+
 /**
  * 设置日志模块的配置函数
  *
@@ -31,11 +33,14 @@ export function setupLoggerModule<ClsType extends ClsStore>(
   ) => Record<string, string> = () => ({})
 ) {
   return LoggerModule.forRootAsync({
+    // imports: [ConfigModule], // ConfigModule 被配置为全局模块，所以不需要在这里导入，避免重复初始化
+    inject: [ConfigService, { token: ClsService, optional: true }],
+    providers: [],
     useFactory: async (
-      configService: ConfigService,
+      configService: ConfigService<ConfigKeyPaths>,
       clsService?: ClsService<ClsType>
     ) => {
-      const loggerConfig = configService.logger;
+      const config = configService.get<ILoggerConfig>('logger');
       return {
         renameContext: 'class',
         pinoHttp: {
@@ -118,15 +123,11 @@ export function setupLoggerModule<ClsType extends ClsStore>(
           // 自动记录请求日志
           autoLogging: true,
           // 定义其他自定义请求属性
-          level: loggerConfig.defaultLevel,
+          level: config?.defaultLevel,
           // 安装" pino-pretty"软件包，以便使用以下选项
-          transport: loggerConfig.prettyLogs
-            ? { target: 'pino-pretty' }
-            : undefined,
+          transport: config?.prettyLogs ? { target: 'pino-pretty' } : undefined,
         },
       };
     },
-    inject: [ConfigService, { token: ClsService, optional: true }],
-    providers: [],
   });
 }

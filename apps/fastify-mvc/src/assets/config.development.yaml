@@ -1,6 +1,6 @@
 app:
   port: 3000
-  globalPrefix: ''
+  globalPrefix: 'api'
   NODE_ENV: development
 
 logger:

@@ -14,10 +14,12 @@
     "removeComments": true,
     "declarationMap": true,
     "sourceMap": true,
+    "baseUrl": ".",
     "paths": {
       "@aiofc/config": ["packages/infra/config/src/index.ts"],
       "@aiofc/drizzle-schema": ["packages/infra/drizzle-schema/src/index.ts"],
       "@aiofc/logger": ["packages/infra/logger/src/index.ts"],
+      "@aiofc/typings": ["packages/infra/typings/src/index.ts"],
       "@aiofc/zod-env": ["packages/infra/zod-env/src/index.ts"]
     }
   }

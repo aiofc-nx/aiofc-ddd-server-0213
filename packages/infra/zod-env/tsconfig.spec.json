@@ -1,10 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "../../../dist/out-tsc/zod-env",
-    "module": "commonjs",
-    "moduleResolution": "node10",
+    "outDir": "./dist/out-tsc",
     "types": ["jest", "node"]
   },
   "include": [
