@@ -1,0 +1,34 @@
+{
+  "name": "bootstrap",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/infra/bootstrap/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectRoot}",
+        "currentVersionResolver": "git-tag",
+        "fallbackCurrentVersionResolver": "disk"
+      }
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/infra/bootstrap",
+        "tsConfig": "packages/infra/bootstrap/tsconfig.lib.json",
+        "packageJson": "packages/infra/bootstrap/package.json",
+        "main": "packages/infra/bootstrap/src/index.ts",
+        "assets": ["packages/infra/bootstrap/*.md"]
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    }
+  }
+}

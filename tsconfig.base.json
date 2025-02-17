@@ -16,9 +16,12 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
+      "@aiofc/bootstrap": ["packages/infra/bootstrap/src/index.ts"],
       "@aiofc/config": ["packages/infra/config/src/index.ts"],
+      "@aiofc/constants": ["packages/infra/constants/src/index.ts"],
       "@aiofc/drizzle-schema": ["packages/infra/drizzle-schema/src/index.ts"],
       "@aiofc/logger": ["packages/infra/logger/src/index.ts"],
+      "@aiofc/rest": ["packages/infra/rest/src/index.ts"],
       "@aiofc/typings": ["packages/infra/typings/src/index.ts"],
       "@aiofc/zod-env": ["packages/infra/zod-env/src/index.ts"]
     }

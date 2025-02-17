@@ -46,3 +46,6 @@ test-output
 # docs
 docs/api
 docs/.vitepress/cache
+
+# docker
+deploy

@@ -23,6 +23,15 @@
     },
     {
       "path": "./packages/infra/typings"
+    },
+    {
+      "path": "./packages/infra/bootstrap"
+    },
+    {
+      "path": "./packages/infra/constants"
+    },
+    {
+      "path": "./packages/infra/rest"
     }
   ]
 }

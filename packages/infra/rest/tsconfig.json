@@ -4,7 +4,7 @@
   "include": [],
   "references": [
     {
-      "path": "../typings"
+      "path": "../constants"
     },
     {
       "path": "./tsconfig.lib.json"
