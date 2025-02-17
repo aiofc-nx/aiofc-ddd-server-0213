@@ -1,23 +1,23 @@
-import { ConfigKeyPaths, IAppConfig } from '@aiofc/config';
-import { ApiRes } from '@lib/infra/rest/res.response';
-import { INestApplication, Logger } from '@nestjs/common';
+import { ConfigKeyPaths, ISwaggerConfig } from '@aiofc/config';
+import { Logger } from '@aiofc/logger';
+import { ApiRes } from '@aiofc/rest';
+import { INestApplication } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import chalk from 'chalk';
-import gradient from 'gradient-string';
 
-import * as packageJson from '../../../../../package.json';
+import packageJson from './package-json';
 
-export function initDocSwagger(
+export async function initDocSwagger(
   app: INestApplication,
-  configService: ConfigService<ConfigKeyPaths>
-): void {
-  const { docSwaggerEnable, docSwaggerPath, port } =
-    configService.get<IAppConfig>('app', {
-      infer: true,
-    });
+  configService: ConfigService<ConfigKeyPaths>,
+  logger: Logger,
+  url: string
+): Promise<void> {
+  const { enable, path } = configService.get<ISwaggerConfig>('swagger', {
+    infer: true,
+  });
 
-  if (!docSwaggerEnable) return;
+  if (!enable) return;
 
   const documentBuilder = new DocumentBuilder()
     .setTitle('Soybean Admin NestJS Backend API')
@@ -31,10 +31,7 @@ export function initDocSwagger(
       packageJson.author.url,
       packageJson.author.email
     )
-    .setLicense(
-      packageJson.license,
-      'https://github.com/soybeanjs/soybean-admin-nestjs/blob/main/LICENSE'
-    );
+    .setLicense(packageJson.license.name, packageJson.license.url);
 
   documentBuilder.addSecurity('', {
     description: 'Bearer Authentication',
@@ -48,36 +45,24 @@ export function initDocSwagger(
     extraModels: [ApiRes],
   });
 
-  SwaggerModule.setup(docSwaggerPath, app, document, {
+  SwaggerModule.setup(path, app, document, {
     swaggerOptions: {
       persistAuthorization: true,
     },
   });
 
-  const logger = new Logger('SwaggerModule');
-  const message = `Swagger Document running on http://127.0.0.1:${port}/${docSwaggerPath}`;
+  // const logger = new Logger(app.get(Logger), 'SwaggerModule');
+  const message = `Swagger Document running on ${url}/${path}`;
   fancyLog(message, logger);
 }
 
 function fancyLog(message: string, logger: Logger) {
-  const rainbow = gradient(
-    'red',
-    'orange',
-    'yellow',
-    'green',
-    'blue',
-    'indigo',
-    'violet'
-  );
-
   const messageLength = message.length;
   const border = '*'.repeat(messageLength + 10);
 
-  const coloredBorder = rainbow(border);
+  const styledMessage = `**** ${message} ****`;
 
-  const styledMessage = chalk.bold(`**** ${rainbow(message)} ****`);
-
-  logger.log(coloredBorder);
+  logger.log(border);
   logger.log(styledMessage);
-  logger.log(coloredBorder);
+  logger.log(border);
 }

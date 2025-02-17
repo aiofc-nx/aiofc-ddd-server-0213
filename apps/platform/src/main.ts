@@ -1,3 +1,4 @@
+import { initDocSwagger } from '@aiofc/bootstrap';
 import { ConfigKeyPaths, IAppConfig, ICorsConfig } from '@aiofc/config';
 import { Logger } from '@aiofc/logger';
 import fastifyCompress from '@fastify/compress';
@@ -77,11 +78,10 @@ async function bootstrap() {
       maxAge: corsConfig?.max_age,
     });
   }
+  // 确保在应用启动后调用初始化文档
+  const url = `http://localhost:${appConfig?.port || 3008}`; // 构建 URL
+  await initDocSwagger(app, configService, pino, url);
   // 启动应用
-  if (appConfig?.globalPrefix) {
-    app.setGlobalPrefix(appConfig?.globalPrefix);
-  }
-
   await app.listen(appConfig?.port || 3008, '0.0.0.0');
   console.log(`Application is running on: ${await app.getUrl()}`);
 }

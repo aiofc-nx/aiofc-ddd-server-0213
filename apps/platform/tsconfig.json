@@ -1,8 +1,11 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.json",
   "files": [],
   "include": [],
   "references": [
+    {
+      "path": "../../packages/infra/bootstrap"
+    },
     {
       "path": "../../packages/infra/logger"
     },

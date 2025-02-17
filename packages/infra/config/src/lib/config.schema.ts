@@ -16,6 +16,12 @@ export const loggerZodSchema = z.object({
   defaultLevel: z.string().default('info'),
 });
 
+// 定义 Swagger 配置的校验规则
+export const swaggerZodSchema = z.object({
+  enable: z.boolean().default(false), // 是否启用文档，默认false
+  path: z.string().default('doc'), // 文档路径，默认'doc'
+});
+
 // 定义 Database 配置的校验规则
 export const databaseZodSchema = z.object({
   user: z.string(), // 数据库用户名
@@ -85,6 +91,7 @@ export const allConfigSchema = z.object({
   app: appZodSchema,
   logger: loggerZodSchema,
   cors: corsZodSchema,
+  swagger: swaggerZodSchema,
   database: databaseZodSchema,
   throttler: throttlerZodSchema,
   redis: redisZodSchema, // 添加 Redis 校验规则
@@ -97,13 +104,14 @@ export type IDatabaseConfig = z.infer<typeof databaseZodSchema>;
 export type ICorsConfig = z.infer<typeof corsZodSchema>;
 export type IThrottlerConfig = z.infer<typeof throttlerZodSchema>;
 export type IRedisConfig = z.infer<typeof redisZodSchema>; // 提取 Redis 配置类型
-
+export type ISwaggerConfig = z.infer<typeof swaggerZodSchema>;
 export type IAllConfig = z.infer<typeof allConfigSchema>;
 
 export interface AllConfigType {
   app: IAppConfig;
   logger: ILoggerConfig;
   cors: ICorsConfig;
+  swagger: ISwaggerConfig;
   database: IDatabaseConfig;
   throttler: IThrottlerConfig;
   redis: IRedisConfig;

@@ -11,6 +11,7 @@ import {
   IDatabaseConfig,
   ILoggerConfig,
   IRedisConfig,
+  ISwaggerConfig,
   IThrottlerConfig,
 } from './config.schema';
 
@@ -41,6 +42,7 @@ export const setupConfigModule: (
     data: {
       app: IAppConfig;
       logger: ILoggerConfig;
+      swagger: ISwaggerConfig;
       database: IDatabaseConfig;
       cors: ICorsConfig;
       throttler: IThrottlerConfig;
@@ -51,6 +53,8 @@ export const setupConfigModule: (
   const AppConfig = registerAs('app', () => parsedConfig.data.app);
   // 注册日志配置
   const LoggerConfig = registerAs('logger', () => parsedConfig.data.logger);
+  // 注册Swagger配置
+  const SwaggerConfig = registerAs('swagger', () => parsedConfig.data.swagger);
   // 注册CORS配置
   const CorsConfig = registerAs('cors', () => parsedConfig.data.cors);
   // 注册限流配置
@@ -71,6 +75,7 @@ export const setupConfigModule: (
     load: [
       AppConfig,
       LoggerConfig,
+      SwaggerConfig,
       DatabaseConfig,
       CorsConfig,
       ThrottlerConfig,

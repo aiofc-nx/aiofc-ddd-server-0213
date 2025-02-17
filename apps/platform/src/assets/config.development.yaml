@@ -25,6 +25,10 @@ throttler:
   limit: 10
   errorMessage: 'Too many requests, please try again later.'
 
+swagger:
+  enable: true
+  path: 'doc'
+
 database:
   user: postgres
   password: postgres

@@ -5,6 +5,11 @@
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "dependencies": {
-    "tslib": "^2.3.0"
+    "@nestjs/common": "^11.0.8",
+    "@aiofc/config": "workspace:*",
+    "@aiofc/rest": "workspace:*",
+    "@nestjs/config": "^4.0.0",
+    "@nestjs/swagger": "^11.0.3",
+    "@aiofc/logger": "workspace:*"
   }
 }
